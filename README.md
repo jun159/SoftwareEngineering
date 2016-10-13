@@ -1,5 +1,5 @@
-# SoftwareEngineering
-Compilation of software engineering patterns and principles. A design pattern is a general repeatable solution to a commonly occurring problem in software design. It is a description or template for how to solve a problem that can be used in many different situations.
+# Software Engineering Principles and Patterns
+Compilation of software engineering principles and patterns. A design pattern is a general repeatable solution to a commonly occurring problem in software design. It is a description or template for how to solve a problem that can be used in many different situations.
 
 ## Software Architecture Design
   1. Pipe and Filter
