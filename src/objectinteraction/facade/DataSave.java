@@ -1,7 +1,5 @@
 package objectinteraction.facade;
 
-import java.util.*;
-
 /**
  * DataSave saves data to database.
  */
