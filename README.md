@@ -33,6 +33,11 @@ Compilation of software engineering principles and patterns. A design pattern is
 ### Observer 
 ### Mediator
 ### Facade
+Facade design pattern is used when a system is very complex or difficult to understand the system has a large number of interdependent classes. This pattern hides the complexities of the larger system and provides a simpler interface to the client. 
+* Facade contains all its subsystem client methods. 
+* Client simply calls the facade class to access any subsystem client methods.
+<div style="text-align:center"><img src="https://github.com/jun159/SoftwareEngineering/blob/master/img/facade.png" height ="200"/></div>
+
 ### Memento
 ### Data Transfer
 ### Double Dispatch
