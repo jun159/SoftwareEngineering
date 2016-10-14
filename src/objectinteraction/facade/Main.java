@@ -3,7 +3,10 @@ package objectinteraction.facade;
 public class Main {
 
     public static void main(String[] args) {
-        Database database = new Database();	// Facade
+    	// Facade
+        Database database = new Database();	
+        
+        // Use DataLoad, DataSave and DataCount methods via Database facade
         database.loadTargetData(-1);
         database.loadAllData();
         database.saveData(null);
