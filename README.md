@@ -38,7 +38,7 @@ Observer design pattern is used when observable (subject), maintains a list of i
   * `ConcreteObserver` receives state from `Observable`, update action if applicable.
 
 #### Push model
-  * `Observable` sends directly to the `Observer` all the data `Observer` needs. 
+  * `Observable` pushes directly to the `Observer` all the states `Observer` needs. 
   * `Observer` doesn't need to query the `Observable` for information. </br></br>
 <p align="center"><img src="https://github.com/jun159/SoftwareEngineering/blob/master/img/pushmodel.png" height ="300"></p>
   * `Observable` as `Player`
@@ -47,8 +47,8 @@ Observer design pattern is used when observable (subject), maintains a list of i
     * `Observers` do not need to query player for state (coordinates), just use state (coordinates) given by player.
     
 #### Pull model
-  * `Observable` merely notifies the `Observer` that something happened
-  * `Observer` queries the `Observable` based to get the information it needs. </br></br>
+  * `Observable` merely notifies (calls) the `Observer` that something happened
+  * `Observer` queries by pulling the state it needs from `Observable`. </br></br>
 <p align="center"><img src="https://github.com/jun159/SoftwareEngineering/blob/master/img/pullmodel.png" height ="300"></p>
   * `Observable` as `Player`
   * `Observer` as `LightEffectController` and `SoundEffectController`
@@ -56,10 +56,14 @@ Observer design pattern is used when observable (subject), maintains a list of i
     * `LightEffectController` and `SoundEffectController` query `Player`'s state (coordinates).
     
 ### Push vs Pull model
+* Communication cost of 'push' model:
+  * Subject to `Observable` push state to ALL `Observers`
 * Advantage of the 'push' model:
   * Lower coupling between the `Observer` and `Observable`.
 * Disadvantage of 'push' model:
   * Less flexibility: `Observable` may not always know what exact information the `Observers` need in order to send it to them.
+* Communication cost of 'pull' model:
+  * Subject to ALL `Observers` pulling state from `Observable`
 * Advantage of the 'pull' model:
   * Higher coupling between the `Observer` and `Observable`.
 * Disadvantage of 'pull' model:
@@ -72,6 +76,8 @@ Observer design pattern is used when observable (subject), maintains a list of i
   * `HeightObservers` interface for `ConcreteObservers` need varying information about `Observable` - One needs to query the age, and some others needs weight and height.
   
 ### Mediator
+Mediator design pattern is used to reduce communication complexity between multiple objects or classes. This pattern provides a mediator class (middleman) which handles all the communications between different classes and supports easy maintenance of the code by loose coupling.
+
 ### Facade
 Facade design pattern is used when a system is very complex or difficult to understand as the system has a large number of interdependent classes. This pattern hides the complexities of the larger system and provides a simpler interface to the client. 
 * `Facade` contains all its subsystem client methods. 
