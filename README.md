@@ -67,9 +67,9 @@ Observer design pattern is used when observable (subject), maintains a list of i
   
 ### Application for Push and Pull model
 * Use 'push' model: If all `Observer` needs same states from `Observable` to trigger update action [Less coupling, simpler]
-  * `AgeObservers` need simply the age and birthdate of the `Observable`. 
+  * `AgeObservers` interface for `ConcreteObservers` need simply the age and birthdate of the `Observable`. 
 * Use 'pull' model: If `Observer` needs varying states from `Observable` to trigger update action [More coupling]
-  * `HeightObservers` need varying information about `Observable` - One needs to query the age, and some others needs weight and height.
+  * `HeightObservers` interface for `ConcreteObservers` need varying information about `Observable` - One needs to query the age, and some others needs weight and height.
   
 ### Mediator
 ### Facade
