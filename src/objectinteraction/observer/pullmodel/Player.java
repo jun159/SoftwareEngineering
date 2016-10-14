@@ -52,7 +52,7 @@ public class Player implements Observable {
 	}
 
 	/**
-	 * Push model: Observable merely notifies the observer that something happened, 
+	 * Pull model: Observable merely notifies the observer that something happened, 
 	 * and the Observer queries the subject based to get the information it needs.
 	 * 
 	 * Player notifies the observer that it has moved.
