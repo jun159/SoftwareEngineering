@@ -54,7 +54,7 @@ Observer design pattern is used when observable (subject), maintains a list of i
 Facade design pattern is used when a system is very complex or difficult to understand as the system has a large number of interdependent classes. This pattern hides the complexities of the larger system and provides a simpler interface to the client. 
 * `Facade` contains all its subsystem client methods. 
 * `Client` simply calls the `Facade` class to access any subsystem client methods.
-<p align="center"><img src="https://github.com/jun159/SoftwareEngineering/blob/master/img/facade.png" height ="200"></p>
+<p align="center"><img src="https://github.com/jun159/SoftwareEngineering/blob/master/img/facade.png" height ="400"></p>
 
 ### Memento
 ### Data Transfer
