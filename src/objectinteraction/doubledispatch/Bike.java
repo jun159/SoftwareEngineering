@@ -1,6 +1,6 @@
 package objectinteraction.doubledispatch;
 
-public class Bike extends Vehicle {
+public class Bike implements Vehicle {
 
 	public void drive() {
 		System.out.println("Driving a bike!");
@@ -9,16 +9,33 @@ public class Bike extends Vehicle {
 	/**
 	 * Java is single dispatch, none of the methods below gets called!
 	 * Compiler cannot decide the actual type of the vehicle used:
-	 * Vehicle bike = new Bike();	// Cannot know Vehicle is actually Bike!
+	 * collideBefore(car) Cannot know Vehicle is actually Car, only recognize as Vehicle!
 	 * 
-	 * Output: Unspecified vehicle collide!
+	 * Output: Bike crash!
 	 */
 	
-	public void collide(Bike bike) {
+	public void collideBefore(Vehicle vehicle) {
 		System.out.println("Bike crash!");
 	}
 	
-	public void collide(Car car) {
+	public void collideBefore(Car car) {
+		System.out.println("Bike hits Car!");
+	}
+	
+	/**
+	 * Solution: Use instanceof to determine the type of the object
+	 * 
+	 * Output: Bike hits car!
+	 */
+	public void collideAfter(Vehicle vehicle) {
+		if(vehicle instanceof Car) {
+			collideAfter((Car) vehicle);
+		} else {
+			System.out.println("Bike crash!");
+		}
+	}
+	
+	public void collideAfter(Car car) {
 		System.out.println("Bike hits Car!");
 	}
 }

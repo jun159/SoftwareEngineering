@@ -13,37 +13,38 @@ public class Main {
 	private void run() {
 		System.out.println("Before checking object type:");
 		executeBefore();
-		System.out.println("After checking object type:");
-		executeAfter(bike);
-		executeAfter(car);
+		System.out.println("\nAfter checking object type:");
+		executeAfter();
 	}
 	
 	/**
 	 * Java is single dispatch, none of the methods below gets called!
-	 * Compiler cannot decide the actual type of the vehicle used:
-	 * Vehicle bike = new Bike();	// Cannot know Vehicle is actually Bike!
-	 * Vehicle car = new Car();		// Cannot know Vehicle is actually Car!
+	 * Compile time cannot decide the actual type of the vehicle used:
+	 * car.collideBefore(bike)		// Cannot know Vehicle argument is actually Bike!
+	 * bike.collideBefore(car)		// Cannot know Vehicle argument is actually Car!
 	 * 
 	 * Output: 
-	 * Unspecified vehicle collide!
-	 * Unspecified vehicle collide!
+	 * Car crash!
+	 * Bike crash!
 	 */
 	private void executeBefore() {
-		car.collide(bike);
-		bike.collide(car);
+		this.car.collideBefore(bike);
+		this.bike.collideBefore(car);
 	}
 	
 	/**
 	 * Solution: Use instanceof to determine the type of the object
+	 * Run time can decide the actual type of the vehicle used:
+	 * car.collideBefore(bike)		// Can know Vehicle argument is actually Bike!
+	 * bike.collideBefore(car)		// Can know Vehicle argument is actually Car!
+	 * 
+	 * Output: 
+	 * Car hits bike!
+	 * Bike hits car!
 	 */
-	private void executeAfter(Vehicle vehicle) {
-		if(vehicle instanceof Bike) {
-			System.out.println("Bike type");
-			car.collide((Bike) vehicle);
-		} else if(vehicle instanceof Car) {
-			System.out.println("Car type");
-			bike.collide((Car) vehicle);
-		}
+	private void executeAfter() {
+		this.car.collideAfter(bike);
+		this.bike.collideAfter(car);
 	}
 	
 	public static void main(String[] args) {		

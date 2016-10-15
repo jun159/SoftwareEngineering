@@ -1,12 +1,10 @@
 package objectinteraction.doubledispatch;
 
-public abstract class Vehicle {
+public interface Vehicle {
 	
-	public void drive() {
-		System.out.println("Brmmmm!");
-	}
+	public void drive();
 	
-	public void collide(Vehicle vehicle) {
-		System.out.println("Unspecified vehicle collide!");
-	}
+	public void collideBefore(Vehicle vehicle);
+	
+	public void collideAfter(Vehicle vehicle);
 }
