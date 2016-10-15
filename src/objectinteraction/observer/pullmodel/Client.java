@@ -1,6 +1,6 @@
 package objectinteraction.observer.pullmodel;
 
-public class Main {
+public class Client {
 
 	public static void main(String[] args) {
 		// Push model - Cost of communication is subject to push state to ALL observers

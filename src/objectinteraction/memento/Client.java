@@ -1,6 +1,6 @@
 package objectinteraction.memento;
 
-public class Main {
+public class Client {
 	
 	public static void main(String[] args) {
 		Originator originator = new Originator();

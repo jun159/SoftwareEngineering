@@ -1,6 +1,6 @@
 package objectinteraction.facade;
 
-public class Main {
+public class Client {
 
     public static void main(String[] args) {
     	// Facade

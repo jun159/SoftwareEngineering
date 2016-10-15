@@ -1,11 +1,11 @@
 package objectinteraction.doubledispatch;
 
-public class Main {
+public class Client {
 	
 	private Vehicle car;
 	private Vehicle bike;
 	
-	public Main() {
+	public Client() {
 		this.car = new Car();
 		this.bike = new Bike();
 	}
@@ -48,7 +48,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {		
-		Main main = new Main();
+		Client main = new Client();
 		main.run();
 	}
 }
