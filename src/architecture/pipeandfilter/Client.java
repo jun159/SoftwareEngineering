@@ -1,5 +1,5 @@
 package architecture.pipeandfilter;
 
-public class Main {
+public class Client {
 
 }
