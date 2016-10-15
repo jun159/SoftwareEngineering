@@ -1,4 +1,4 @@
-package objectinteraction.datatransfer;
+package objectinteraction.memento;
 
 public class Memento {
 	private String state;

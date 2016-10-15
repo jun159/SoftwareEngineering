@@ -1,4 +1,4 @@
-package objectinteraction.datatransfer;
+package objectinteraction.memento;
 
 import java.util.ArrayList;
 import java.util.List;
