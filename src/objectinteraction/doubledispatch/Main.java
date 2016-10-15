@@ -24,7 +24,9 @@ public class Main {
 	 * Vehicle bike = new Bike();	// Cannot know Vehicle is actually Bike!
 	 * Vehicle car = new Car();		// Cannot know Vehicle is actually Car!
 	 * 
-	 * Output: Unspecified vehicle collide!
+	 * Output: 
+	 * Unspecified vehicle collide!
+	 * Unspecified vehicle collide!
 	 */
 	private void executeBefore() {
 		car.collide(bike);
@@ -36,9 +38,11 @@ public class Main {
 	 */
 	private void executeAfter(Vehicle vehicle) {
 		if(vehicle instanceof Bike) {
-			car.collide((Bike) bike);
-		} else if(car instanceof Car) {
-			bike.collide((Car) car);
+			System.out.println("Bike type");
+			car.collide((Bike) vehicle);
+		} else if(vehicle instanceof Car) {
+			System.out.println("Car type");
+			bike.collide((Car) vehicle);
 		}
 	}
 	
